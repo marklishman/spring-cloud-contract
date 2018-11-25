@@ -65,7 +65,7 @@
 				<version>${spring-cloud-contract.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<baseClassForTests>hello.BaseClass</baseClassForTests>
+					<baseClassForTests>io.lishman.BaseClass</baseClassForTests>
 				</configuration>
 			</plugin>
 
