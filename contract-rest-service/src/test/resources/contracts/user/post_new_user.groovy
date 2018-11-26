@@ -3,7 +3,7 @@ package contracts.user
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
-	description "should return all users"
+	description "should save a users"
 
 	request {
 		url "/users"
