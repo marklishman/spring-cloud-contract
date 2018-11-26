@@ -1,7 +1,7 @@
 
 # Run Standalone
 
-    java -jar stub-runner.jar --stubrunner.stubsMode=LOCAL --stubrunner.ids=com.example:contract-rest-service:0.0.1-SNAPSHOT:stubs:8100
+    java -jar stub-runner.jar --server.port=8101 --stubrunner.stubsMode=LOCAL --stubrunner.ids=com.example:contract-rest-service:0.0.1-SNAPSHOT:stubs:8100
 
 # Using a @Rule
 
