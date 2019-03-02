@@ -27,8 +27,8 @@ public class ClientApplicationTest {
     @Autowired
     private MockMvc mvc;
 
-	@Test
-	public void get_users() throws Exception {
+    @Test
+    public void get_users() throws Exception {
         mvc.perform(get("/get-data")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -36,7 +36,7 @@ public class ClientApplicationTest {
                 .andExpect(jsonPath("$[1].name").value("Ervin Howell"))
                 .andExpect(jsonPath("$[2].name").value("Clementine Bauch"))
                 .andExpect(jsonPath("$.length()").value(3));
-	}
+    }
 
     @Test
     public void get_user() throws Exception {

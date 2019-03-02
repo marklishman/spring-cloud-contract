@@ -3,31 +3,31 @@ package contracts.user
 import org.springframework.cloud.contract.spec.Contract
 
 Contract.make {
-	description "should save a users"
+    description "should save a users"
 
-	request {
-		url "/users"
-		method POST()
+    request {
+        url "/users"
+        method POST()
         headers {
             contentType applicationJson()
         }
-		body (
-			"id": 4,
-			"name": "Patricia Lebsack",
-			"username": "Karianne",
-			"email": "Julianne.OConner@kory.org",
-			"phone": "493-170-9623 x156",
-			"website": "kale.biz"
-		)
-	}
+        body(
+                "id": 4,
+                "name": "Patricia Lebsack",
+                "username": "Karianne",
+                "email": "Julianne.OConner@kory.org",
+                "phone": "493-170-9623 x156",
+                "website": "kale.biz"
+        )
+    }
 
-	response {
-		status 201
-		headers {
-			contentType applicationJson()
-		}
-		body (
-			anyUuid()
-		)
-	}
+    response {
+        status 201
+        headers {
+            contentType applicationJson()
+        }
+        body(
+                anyUuid()
+        )
+    }
 }

@@ -21,17 +21,18 @@ import static org.mockito.BDDMockito.given;
 @SpringBootTest(classes = UserApplication.class)
 public abstract class BaseClass {
 
-	@Autowired
-	UserController userController;
+    @Autowired
+    UserController userController;
 
-	@MockBean
-	UserService userService;
+    @MockBean
+    UserService userService;
 
-	@Before public void setup() {
-		RestAssuredMockMvc.standaloneSetup(userController);
+    @Before
+    public void setup() {
+        RestAssuredMockMvc.standaloneSetup(userController);
 
-		given(userService.getUser(1))
-				.willReturn(new User(1L, "Leanne Graham", "Bret", "Sincere@april.biz", "1-770-736-8031 x56442", "hildegard.org"));
+        given(userService.getUser(1))
+                .willReturn(new User(1L, "Leanne Graham", "Bret", "Sincere@april.biz", "1-770-736-8031 x56442", "hildegard.org"));
 
         given(userService.getUsers()).willReturn(Arrays.asList(
                 new User(1L, "Leanne Graham", "Bret", "Sincere@april.biz", "1-770-736-8031 x56442", "hildegard.org"),
@@ -40,7 +41,7 @@ public abstract class BaseClass {
 
         given(userService.saveUser(any())).willReturn(UUID.randomUUID().toString());
 
-	}
+    }
 
 
 }

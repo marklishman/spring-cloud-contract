@@ -19,26 +19,26 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-	private final UserService userService;
+    private final UserService userService;
 
-	public UserController(UserService userService) {
-		this.userService = userService;
-	}
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
-	@GetMapping()
-	public List<User> getUsers() {
-		return userService.getUsers();
-	}
+    @GetMapping()
+    public List<User> getUsers() {
+        return userService.getUsers();
+    }
 
-	@GetMapping("/{id}")
-	public User getUserById(@PathVariable("id") int id) {
-		return userService.getUser(id);
-	}
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable("id") int id) {
+        return userService.getUser(id);
+    }
 
-	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public @ResponseBody
     String saveUser(@RequestBody User user) {
-	    return userService.saveUser(user);
+        return userService.saveUser(user);
     }
 }

@@ -1,13 +1,13 @@
 buildscript {
-	ext { 
-		springBootVersion = '2.0.5.RELEASE' 
-		verifierVersion = '1.2.1.RELEASE'
-	}
-	repositories { mavenCentral() }
-	dependencies { 
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
-		classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:${verifierVersion}"
-	}
+    ext {
+        springBootVersion = '2.0.5.RELEASE'
+        verifierVersion = '1.2.1.RELEASE'
+    }
+    repositories { mavenCentral() }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:${verifierVersion}"
+    }
 }
 
 apply plugin: 'groovy'
@@ -23,7 +23,7 @@ apply plugin: 'spring-cloud-contract'
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 bootJar {
-	baseName = 'contract-rest-service'
+    baseName = 'contract-rest-service'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -31,15 +31,15 @@ targetCompatibility = 1.8
 repositories { mavenCentral() }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.springframework.cloud:spring-cloud-starter-contract-verifier')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.cloud:spring-cloud-starter-contract-verifier')
 }
 
 dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.SR1"
-	}
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.SR1"
+    }
 }
 
 repositories {
@@ -49,8 +49,8 @@ repositories {
 }
 
 contracts {
-	packageWithBaseClasses = 'hello'
-	baseClassMappings {
-		baseClassMapping(".*hello.*", "hello.BaseClass")
-	}
+    packageWithBaseClasses = 'hello'
+    baseClassMappings {
+        baseClassMapping(".*hello.*", "hello.BaseClass")
+    }
 }

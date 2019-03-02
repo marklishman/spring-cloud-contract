@@ -21,12 +21,14 @@ public class ClientController {
     }
 
     @GetMapping("/get-data")
-    public @ResponseBody List<User> getUsers() {
+    public @ResponseBody
+    List<User> getUsers() {
         return clientService.getUsers();
     }
 
     @GetMapping("/get-data/{id}")
-    public @ResponseBody User getUser(@PathVariable("id") Long id) {
+    public @ResponseBody
+    User getUser(@PathVariable("id") Long id) {
         return clientService.getUser(id);
     }
 }
